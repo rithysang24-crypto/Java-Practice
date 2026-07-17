@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Checker</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        font-family: Arial, sans-serif;
+        background: #0f172a;
+        color: #ffffff;
+        text-align: center;
+    }
+    h1{
+        padding: 30px;
+    }
+    div {
+        width: 350px;
+        background-color: navy;
+        text-align: center;
+        margin: 80px auto;
+        color: rgb(180, 180, 255);
+        padding: 20px;
+        border-radius: 8px;
+    }
+    button{
+    margin-top: 5px;
+    background: #00f2fe;
+    color: #0f172a;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    padding: 10px 10px;
+    letter-spacing: 0.5px;
+    transform: all 0.3 ease;
+    }
+    button:hover{
+    background: #ffffff;
+    box-shadow: 0 0 15px rgb(0, 242, 254, 0.6);
+    }
+    input{
+    background-color: whitesmoke;
+    width: 280px;
+    height: 25px;
+    margin: 5px;
+    }
+    div{
+    width: 350px;
+    background-color: navy;
+    text-align: center;
+    margin: 80px auto;
+    color: rgb(180, 180, 255);
+    padding: 20px;
+    border-radius: 8px;
+    }
+    .btn{
+        background: #00f2fe;
+        color: #0f172a;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 13px;
+        text-transform: uppercase;
+        padding: 10px 10px;
+        letter-spacing: 0.5px;
+        transform: all 0.3 ease;
+    }
+    .btn:hover{
+        background: #ffffff;
+        box-shadow: 0 0 15px rgb(0, 242, 254, 0.6);
+    }
+    </style>
+</head>
+<body>
+    <a class="btn" href="index.html">BACK</a>
+    <div>
+    <h1>My Day</h1>
+    <input type="number" id="day" placeholder="Number(1-7)">
+    <h1 id="day1"></h1>
+    <button onclick="myday()">Click</button>
+    </div>
+    <script>
+        function myday(){
+            let day=parseInt(document.getElementById("day").value);
+            switch(day){
+                case 1 :
+                    document.getElementById("day1").innerHTML="Monday";break;
+                case 2 :
+                    document.getElementById("day1").innerHTML="Tuesday";break;
+                case 3 :
+                    document.getElementById("day1").innerHTML="Wenesday";break;
+                case 4 :
+                    document.getElementById("day1").innerHTML="Thursday";break;
+                case 5 :
+                    document.getElementById("day1").innerHTML="Friday";break;
+                case 6 :
+                    document.getElementById("day1").innerHTML="Saturday";break;
+                case 7 :
+                    document.getElementById("day1").innerHTML="Sunday";break;
+                default:document.getElementById("day1").innerHTML="Unknow";
+                
+            }
+        }
+        
+    </script>
+</body>
+</html>

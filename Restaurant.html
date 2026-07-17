@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Ordering System</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        font-family: Arial, sans-serif;
+        background: #0f172a;
+        color: #ffffff;
+        text-align: center;
+    }
+    h1{
+        font-size: 28px;
+        padding: 30px;
+    }
+    p{
+        margin-left: 10px;
+        padding: 2px;
+    }
+    div {
+        width: 450px;
+        background-color: navy;
+        text-align: left;
+        margin: 80px auto;
+        color: rgb(180, 180, 255);
+        padding: 30px;
+        border-radius: 8px;
+    }
+    button{
+    margin-top: 5px;
+    background: #00f2fe;
+    color: #0f172a;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    padding: 10px 10px;
+    letter-spacing: 0.5px;
+    transform: all 0.3 ease;
+    margin-left: 200px;
+    }
+    button:hover{
+    background: #ffffff;
+    box-shadow: 0 0 15px rgb(0, 242, 254, 0.6);
+    }
+    input{
+        background-color: whitesmoke;
+        width: 280px;
+        height: 25px;
+        margin: 5px;
+    }
+    .btn{
+        background: #00f2fe;
+        color: #0f172a;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 13px;
+        text-transform: uppercase;
+        padding: 10px 10px;
+        letter-spacing: 0.5px;
+        transform: all 0.3 ease;
+        
+    }
+    .btn:hover{
+    background: #ffffff;
+    box-shadow: 0 0 15px rgb(0, 242, 254, 0.6);
+    }
+    </style>
+</head>
+<body>
+    <a class="btn" href="index.html">BACK</a>
+    <div>
+        <h1>Restaurant Ordering System</h1>
+        <p>Customer Name</p>
+        <input type="text" id="name" placeholder="Enter your name."><br>
+        <p>Menu Number</p>
+        <p>1. Fried Rice ($3)</p>
+        <p>2. Noodle (4$)</p>
+        <p>3. Hamburger($5)</p>
+        <p>4. Pizza($20)</p>
+        <input type="number" id="menu" placeholder="Add here!"><br>
+        <p>Quantity</p>
+        <input type="number" id="quantity" placeholder="Add here!"><br>
+        <button onclick="order()">Click</button>
+        <h2 id="cname"></h2>
+        <h2 id="cmenu"></h2>
+        <h2 id="cquantity"></h2>
+        <h2 id="ctotal"></h2>
+    </div>
+    <script>
+        function order(){
+            let name = document.getElementById("name").value;
+            let menu = parseFloat(document.getElementById("menu").value);
+            let quantity = parseFloat(document.getElementById("quantity").value);
+            let price = 0;
+            let itemname ="";
+            if (menu === 1){
+                itemname = "Fried Rice";
+                price = 3;
+            }
+            else if (menu === 2){
+                itemname = "Noodle";
+                price = 4;
+            }
+            else if(menu === 3){
+                itemname = "Hamburger";
+                price = 5;
+            }
+            else if(menu === 4){
+                itemname = "Pizza";
+                price = 20;
+            }
+            let total = price * quantity;
+            document.getElementById("cname").innerHTML="Customer Name" + name;
+            document.getElementById("ctotal").innerHTML="Food: "+total;
+            document.getElementById("cquantity").innerHTML="Quantity: "+quantity;
+            document.getElementById("ctotal").innerHTML="Total: $"+total;
+        }
+    </script>
+</body>
+</html>
